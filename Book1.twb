@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0213.2333                               -->
+<workbook original-version='18.1' source-build='2019.1.0 (20191.19.0213.2333)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Sheet1 (1_page_s3_file_1)' inline='true' name='federated.1tsptgl0te5ico19rjq5i1s03jd1' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='1_page_s3_file_1' name='excel-direct.1mbf5rd0bdqs1f1ejfmm41n4ypy6'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Evan/Documents/GitHub/Tableau/1_page_s3_file_1.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation connection='excel-direct.1mbf5rd0bdqs1f1ejfmm41n4ypy6' name='Sheet1' table='[Sheet1$]' type='table'>
+          <columns gridOrigin='A1:D1709:no:A1:D1709:0' header='yes' outcome='6'>
+            <column datatype='string' name='Age' ordinal='0' />
+            <column datatype='string' name='Gender' ordinal='1' />
+            <column datatype='date' name='Period' ordinal='2' />
+            <column datatype='integer' name='Unemployed' ordinal='3' />
+          </columns>
+        </relation>
+        <refresh increment-key='' incremental-updates='false' />
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Age</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Age]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Age</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Gender</remote-name>
+            <remote-type>130</remote-type>
+            <local-name>[Gender]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Gender</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <collation flag='1' name='LEN_RUS_S2' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;WSTR&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Period</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Period]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Period</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Unemployed</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Unemployed]</local-name>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias>Unemployed</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;I8&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Sheet1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:D1709:no:A1:D1709:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <extract count='-1' enabled='true' units='records'>
+        <connection access_mode='readonly' authentication='auth-none' author-locale='en_US' class='hyper' dbname='C:/Users/Evan/Documents/GitHub/Tableau/Sheet1 (1_page_s3_file_1).hyper' default-settings='yes' schema='Extract' sslmode='' tablename='Extract' update-time='02/18/2019 05:23:31 AM' username='tableau_internal_user'>
+          <relation name='Extract' table='[Extract].[Extract]' type='table' />
+          <refresh increment-key='' incremental-updates='false'>
+            <refresh-event add-from-file-path='Sheet1 (1_page_s3_file_1)' increment-value='%null%' refresh-type='create' rows-inserted='1708' timestamp-start='2019-02-18 05:23:31.740' />
+          </refresh>
+          <metadata-records>
+            <metadata-record class='column'>
+              <remote-name>Age</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Age]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Age</remote-alias>
+              <ordinal>0</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>7</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Gender</remote-name>
+              <remote-type>129</remote-type>
+              <local-name>[Gender]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Gender</remote-alias>
+              <ordinal>1</ordinal>
+              <family>Sheet1</family>
+              <local-type>string</local-type>
+              <aggregation>Count</aggregation>
+              <approx-count>2</approx-count>
+              <contains-null>true</contains-null>
+              <collation flag='1' name='LEN_RUS_S2' />
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Period</remote-name>
+              <remote-type>133</remote-type>
+              <local-name>[Period]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Period</remote-alias>
+              <ordinal>2</ordinal>
+              <family>Sheet1</family>
+              <local-type>date</local-type>
+              <aggregation>Year</aggregation>
+              <approx-count>122</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+            <metadata-record class='column'>
+              <remote-name>Unemployed</remote-name>
+              <remote-type>20</remote-type>
+              <local-name>[Unemployed]</local-name>
+              <parent-name>[Extract]</parent-name>
+              <remote-alias>Unemployed</remote-alias>
+              <ordinal>3</ordinal>
+              <family>Sheet1</family>
+              <local-type>integer</local-type>
+              <aggregation>Sum</aggregation>
+              <approx-count>550</approx-count>
+              <contains-null>true</contains-null>
+            </metadata-record>
+          </metadata-records>
+        </connection>
+      </extract>
+      <layout dim-ordering='alphabetic' dim-percentage='0.509532' measure-ordering='alphabetic' measure-percentage='0.490468' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 3'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Sheet1 (1_page_s3_file_1)' name='federated.1tsptgl0te5ico19rjq5i1s03jd1' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1tsptgl0te5ico19rjq5i1s03jd1'>
+            <column datatype='date' name='[Period]' role='dimension' type='ordinal' />
+            <column datatype='integer' name='[Unemployed]' role='measure' type='quantitative' />
+            <column-instance column='[Unemployed]' derivation='Sum' name='[sum:Unemployed:qk]' pivot='key' type='quantitative' />
+            <column-instance column='[Period]' derivation='Month-Trunc' name='[tmn:Period:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1tsptgl0te5ico19rjq5i1s03jd1].[tmn:Period:qk]' value='101' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Automatic' />
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='1624' />
+                <format attr='maxwidth' value='1624' />
+                <format attr='minheight' value='1078' />
+                <format attr='maxheight' value='1078' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1tsptgl0te5ico19rjq5i1s03jd1].[sum:Unemployed:qk]</rows>
+        <cols>[federated.1tsptgl0te5ico19rjq5i1s03jd1].[tmn:Period:qk]</cols>
+      </table>
+      <simple-id uuid='{1C998E0C-16BA-4722-8154-BBFF67759CA9}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 3'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <simple-id uuid='{AB9D7E55-E48A-4C35-A9A9-2F58EB121A06}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 3' width='192'>
+      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
+      rkJggg==
+    </thumbnail>
+  </thumbnails>
+</workbook>
