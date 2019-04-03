@@ -1,0 +1,620 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20191.19.0321.1733                               -->
+<workbook original-version='18.1' source-build='2019.1.2 (20191.19.0321.1733)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <SheetIdentifierTracking />
+    <WindowsPersistSimpleIdentifiers />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='Timeline+ (P11-Coal-Terminal)' inline='true' name='federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='P11-Coal-Terminal' name='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv'>
+            <connection class='excel-direct' cleaning='no' compat='no' dataRefreshTime='' filename='C:/Users/Evan/Documents/GitHub/Tableau/Advanced/S3/P11-Coal-Terminal.xlsx' interpretationMode='0' password='' server='' validate='no' />
+          </named-connection>
+        </named-connections>
+        <relation name='Pivot' type='pivot'>
+          <columns>
+            <column datatype='string' name='Pivot Field Names' />
+            <column datatype='integer' name='Pivot Field Values' />
+          </columns>
+          <tag name='Pivot Field Names'>
+            <value name='[Actual Tonnes]' />
+            <value name='[Nominal Capacity]' />
+            <value name='[Actual Tonnes (RL2)]' />
+            <value name='[Nominal Capacity (RL2)]' />
+            <value name='[Actual Tonnes (SR1)]' />
+            <value name='[Nominal Capacity (SR1)]' />
+            <value name='[Actual Tonnes (SR4A)]' />
+            <value name='[Nominal Capacity (SR4A)]' />
+            <value name='[Actual Tonnes (SR6)]' />
+            <value name='[Nominal Capacity (SR6)]' />
+          </tag>
+          <groups>
+            <group name='Pivot Field Values'>
+              <field name='[RL1].[Actual Tonnes]' />
+              <field name='[RL1].[Nominal Capacity]' />
+              <field name='[RL2].[Actual Tonnes]' />
+              <field name='[RL2].[Nominal Capacity]' />
+              <field name='[SR1].[Actual Tonnes]' />
+              <field name='[SR1].[Nominal Capacity]' />
+              <field name='[SR4A].[Actual Tonnes]' />
+              <field name='[SR4A].[Nominal Capacity]' />
+              <field name='[SR6].[Actual Tonnes]' />
+              <field name='[SR6].[Nominal Capacity]' />
+            </group>
+          </groups>
+          <relation join='left' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[Timeline].[Datetime]' />
+                <expression op='[SR6].[Datetime]' />
+              </expression>
+            </clause>
+            <relation join='left' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[Timeline].[Datetime]' />
+                  <expression op='[SR4A].[Datetime]' />
+                </expression>
+              </clause>
+              <relation join='left' type='join'>
+                <clause type='join'>
+                  <expression op='='>
+                    <expression op='[Timeline].[Datetime]' />
+                    <expression op='[SR1].[Datetime]' />
+                  </expression>
+                </clause>
+                <relation join='left' type='join'>
+                  <clause type='join'>
+                    <expression op='='>
+                      <expression op='[Timeline].[Datetime]' />
+                      <expression op='[RL2].[Datetime]' />
+                    </expression>
+                  </clause>
+                  <relation join='left' type='join'>
+                    <clause type='join'>
+                      <expression op='='>
+                        <expression op='[Timeline].[Datetime]' />
+                        <expression op='[RL1].[Datetime]' />
+                      </expression>
+                    </clause>
+                    <relation connection='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv' name='Timeline' table='[Timeline$]' type='table'>
+                      <columns gridOrigin='A1:A721:no:A1:A721:0' header='yes' outcome='6'>
+                        <column datatype='datetime' name='Datetime' ordinal='0' />
+                      </columns>
+                    </relation>
+                    <relation connection='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv' name='RL1' table='[RL1$]' type='table'>
+                      <columns gridOrigin='A1:C721:no:A1:C721:0' header='yes' outcome='6'>
+                        <column datatype='datetime' name='Datetime' ordinal='0' />
+                        <column datatype='integer' name='Nominal Capacity' ordinal='1' />
+                        <column datatype='integer' name='Actual Tonnes' ordinal='2' />
+                      </columns>
+                    </relation>
+                  </relation>
+                  <relation connection='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv' name='RL2' table='[RL2$]' type='table'>
+                    <columns gridOrigin='A1:C721:no:A1:C721:0' header='yes' outcome='6'>
+                      <column datatype='datetime' name='Datetime' ordinal='0' />
+                      <column datatype='integer' name='Nominal Capacity' ordinal='1' />
+                      <column datatype='integer' name='Actual Tonnes' ordinal='2' />
+                    </columns>
+                  </relation>
+                </relation>
+                <relation connection='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv' name='SR1' table='[SR1$]' type='table'>
+                  <columns gridOrigin='A1:C625:no:A1:C625:0' header='yes' outcome='6'>
+                    <column datatype='datetime' name='Datetime' ordinal='0' />
+                    <column datatype='integer' name='Nominal Capacity' ordinal='1' />
+                    <column datatype='integer' name='Actual Tonnes' ordinal='2' />
+                  </columns>
+                </relation>
+              </relation>
+              <relation connection='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv' name='SR4A' table='[SR4A$]' type='table'>
+                <columns gridOrigin='A1:C505:no:A1:C505:0' header='yes' outcome='6'>
+                  <column datatype='datetime' name='Datetime' ordinal='0' />
+                  <column datatype='integer' name='Nominal Capacity' ordinal='1' />
+                  <column datatype='integer' name='Actual Tonnes' ordinal='2' />
+                </columns>
+              </relation>
+            </relation>
+            <relation connection='excel-direct.1v5beon11rhq8k16ni6re0cf6fvv' name='SR6' table='[SR6$]' type='table'>
+              <columns gridOrigin='A1:C721:no:A1:C721:0' header='yes' outcome='6'>
+                <column datatype='datetime' name='Datetime' ordinal='0' />
+                <column datatype='integer' name='Nominal Capacity' ordinal='1' />
+                <column datatype='integer' name='Actual Tonnes' ordinal='2' />
+              </columns>
+            </relation>
+          </relation>
+        </relation>
+        <cols>
+          <map key='[Datetime (RL1)]' value='[RL1].[Datetime]' />
+          <map key='[Datetime (RL2)]' value='[RL2].[Datetime]' />
+          <map key='[Datetime (SR1)]' value='[SR1].[Datetime]' />
+          <map key='[Datetime (SR4A)]' value='[SR4A].[Datetime]' />
+          <map key='[Datetime (SR6)]' value='[SR6].[Datetime]' />
+          <map key='[Datetime]' value='[Timeline].[Datetime]' />
+          <map key='[Pivot Field Names]' value='[Pivot].[Pivot Field Names]' />
+          <map key='[Pivot Field Values]' value='[Pivot].[Pivot Field Values]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>Datetime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Datetime]</local-name>
+            <parent-name>[Timeline]</parent-name>
+            <remote-alias>Datetime</remote-alias>
+            <ordinal>0</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[Timeline]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:A721:no:A1:A721:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Datetime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Datetime (RL1)]</local-name>
+            <parent-name>[RL1]</parent-name>
+            <remote-alias>Datetime</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RL1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C721:no:A1:C721:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Datetime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Datetime (RL2)]</local-name>
+            <parent-name>[RL2]</parent-name>
+            <remote-alias>Datetime</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[RL2]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C721:no:A1:C721:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Datetime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Datetime (SR1)]</local-name>
+            <parent-name>[SR1]</parent-name>
+            <remote-alias>Datetime</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SR1]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C625:no:A1:C625:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Datetime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Datetime (SR4A)]</local-name>
+            <parent-name>[SR4A]</parent-name>
+            <remote-alias>Datetime</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SR4A]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C505:no:A1:C505:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Datetime</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[Datetime (SR6)]</local-name>
+            <parent-name>[SR6]</parent-name>
+            <remote-alias>Datetime</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;DATE&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='capability'>
+            <remote-name />
+            <remote-type>0</remote-type>
+            <parent-name>[SR6]</parent-name>
+            <remote-alias />
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='integer' name='context'>0</attribute>
+              <attribute datatype='string' name='gridOrigin'>&quot;A1:C721:no:A1:C721:0&quot;</attribute>
+              <attribute datatype='boolean' name='header'>true</attribute>
+              <attribute datatype='integer' name='outcome'>6</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Names</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[Pivot Field Names]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Names</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>Pivot Field Values</remote-name>
+            <remote-type>20</remote-type>
+            <local-name>[Pivot Field Values]</local-name>
+            <parent-name>[Pivot]</parent-name>
+            <remote-alias>Pivot Field Values</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>integer</local-type>
+            <aggregation>Sum</aggregation>
+            <contains-null>true</contains-null>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='datetime' hidden='true' name='[Datetime (RL1)]' role='dimension' type='ordinal' />
+      <column datatype='datetime' hidden='true' name='[Datetime (RL2)]' role='dimension' type='ordinal' />
+      <column datatype='datetime' hidden='true' name='[Datetime (SR1)]' role='dimension' type='ordinal' />
+      <column datatype='datetime' hidden='true' name='[Datetime (SR4A)]' role='dimension' type='ordinal' />
+      <column datatype='datetime' hidden='true' name='[Datetime (SR6)]' role='dimension' type='ordinal' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Machines' datatype='string' name='[Pivot Field Names]' role='dimension' type='nominal' />
+      <column caption='Tons' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.509532' measure-ordering='alphabetic' measure-percentage='0.490468' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;United States&quot;' />
+      </semantic-values>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='Timeline+ (P11-Coal-Terminal)' name='federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn'>
+            <column datatype='datetime' name='[Datetime]' role='dimension' type='ordinal' />
+            <column caption='Tons' datatype='integer' name='[Pivot Field Values]' role='measure' type='quantitative' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[diff:sum:Pivot Field Values:qk:4]' pivot='key' type='quantitative'>
+              <table-calc diff-options='Relative' ordering-type='Rows' type='Difference'>
+                <address>
+                  <value>-2</value>
+                </address>
+              </table-calc>
+            </column-instance>
+            <column-instance column='[Datetime]' derivation='Day' name='[dy:Datetime:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[Pivot Field Values]' derivation='Sum' name='[sum:Pivot Field Values:qk]' pivot='key' type='quantitative' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='axis'>
+            <format attr='height' field='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[dy:Datetime:ok]' value='21' />
+          </style-rule>
+          <style-rule element='cell'>
+            <format attr='text-format' field='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[sum:Pivot Field Values:qk]' value='n#,##0,K;-#,##0,K' />
+            <format attr='text-orientation' field='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[sum:Pivot Field Values:qk]' value='0' />
+            <format attr='text-format' field='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[diff:sum:Pivot Field Values:qk:4]' value='n#,##0,K;-#,##0,K' />
+            <format attr='text-orientation' field='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[diff:sum:Pivot Field Values:qk:4]' value='0' />
+          </style-rule>
+          <style-rule element='worksheet'>
+            <format attr='font-size' value='10' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='false' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='456' />
+                <format attr='maxheight' value='456' />
+                <format attr='minwidth' value='1800' />
+                <format attr='maxwidth' value='1800' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='1' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[sum:Pivot Field Values:qk]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <text column='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[sum:Pivot Field Values:qk]' />
+            </encodings>
+            <style>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='652' />
+                <format attr='maxheight' value='652' />
+                <format attr='minwidth' value='1800' />
+                <format attr='maxwidth' value='1800' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+          <pane id='2' selection-relaxation-option='selection-relaxation-allow' y-axis-name='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[diff:sum:Pivot Field Values:qk:4]'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <text column='[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[diff:sum:Pivot Field Values:qk:4]' />
+            </encodings>
+            <style>
+              <style-rule element='cell'>
+                <format attr='text-orientation' value='-90' />
+              </style-rule>
+              <style-rule element='mark'>
+                <format attr='mark-labels-cull' value='true' />
+                <format attr='mark-labels-show' value='true' />
+              </style-rule>
+              <style-rule element='pane'>
+                <format attr='minheight' value='652' />
+                <format attr='maxheight' value='652' />
+                <format attr='minwidth' value='1800' />
+                <format attr='maxwidth' value='1800' />
+                <format attr='aspect' value='0' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>([federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[sum:Pivot Field Values:qk] + [federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[diff:sum:Pivot Field Values:qk:4])</rows>
+        <cols>[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[dy:Datetime:ok]</cols>
+      </table>
+      <simple-id uuid='{3A01E9E1-22BD-4224-AFB3-22EDD464F328}' />
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' maximized='true' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1ck6kkt0ib9mbv1ejj7t21vl6nrn].[yr:Datetime:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+      <simple-id uuid='{0742309E-1B3B-422F-B79E-C6DEE7E05405}' />
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+      qfn/BZmZgKJCrmwAAAAASUVORK5CYII=
+    </thumbnail>
+  </thumbnails>
+</workbook>
